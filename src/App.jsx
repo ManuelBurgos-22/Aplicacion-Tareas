@@ -8,6 +8,7 @@ import NavbarComponent from "./Components/NavbarComponent"
 import InfoComponent from "./Components/InfoComponent"
 import ImgComponent from "./Components/ImgComponent"
 import FooterComponent from "./Components/FooterComponent"
+import PersonajesComponent from "./Components/PersonajesComponent"
 
 
 
@@ -25,6 +26,9 @@ function App() {
       </div>
       <div>
         <ImgComponent></ImgComponent>
+      </div>
+      <div>
+        <PersonajesComponent></PersonajesComponent>
       </div>
       <div>
         <FooterComponent></FooterComponent>
