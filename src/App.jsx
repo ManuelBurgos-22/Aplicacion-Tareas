@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CardComponent from "./Components/CardComponent"
 import NavbarComponent from "./Components/NavbarComponent"
 import InfoComponent from "./Components/InfoComponent"
+import ImgComponent from "./Components/ImgComponent"
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
       </div>
       <div>
         <InfoComponent></InfoComponent>
+      </div>
+      <div>
+        <ImgComponent></ImgComponent>
       </div>
     </>
   )

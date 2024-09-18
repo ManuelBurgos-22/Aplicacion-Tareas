@@ -1,9 +1,10 @@
 import React from 'react';
 import img from "../../public/img/logo.png"
+import Btn1Component from "../Components/Btn1Component"
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></link>
 
-function Navbar() {
+function Info() {
     return (
         <>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -18,11 +19,10 @@ function Navbar() {
                         historia de 2 hermanos conflictivos que luchan por su orgullo, sin saber que todo sería
                         por un bien común.
                     </p>
-                    <a className="btn btn-primary" href="{{https://rupturacorp.itch.io/ruptura"
-                        style={{BackgroundColor: '#5D0E41', border:'#5D0E41'}}>Juegalo ahora!</a>
+                    <Btn1Component></Btn1Component> 
                 </div>
             </div>
         </>
     );
 }
-export default Navbar;
+export default Info;
