@@ -14,8 +14,8 @@ function Info() {
                 <div className="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src={img} alt="..." />
                 </div>
                 <div className="col-lg-5">
-                    <h1 className="font-weight-light color">Ruptura</h1>
-                    <p className="color">
+                    <h1 className="font-weight-light text-white color">Ruptura</h1>
+                    <p className="color text-white">
                         Ruptura es un videojuego de plataformas 2D desarrollado por RupturaCorp. En el que se desenlaza la
                         historia de 2 hermanos conflictivos que luchan por su orgullo, sin saber que todo sería
                         por un bien común.

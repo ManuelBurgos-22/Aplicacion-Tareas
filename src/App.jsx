@@ -11,29 +11,29 @@ import FooterComponent from "./Components/FooterComponent"
 import PersonajesComponent from "./Components/PersonajesComponent"
 
 
-
 function App() {
   const [count, setCount] = useState(0)
 
   return (
 
     <>
-      <div>
-        <NavbarComponent></NavbarComponent>
+      <div style={{backgroundColor:'#03346e'}}>
+        <div>
+          <NavbarComponent></NavbarComponent>
+        </div>
+        <div>
+          <InfoComponent></InfoComponent>
+        </div>
+        <div>
+          <ImgComponent></ImgComponent>
+        </div>
+        <div>
+          <PersonajesComponent></PersonajesComponent>
+        </div>
+        <div>
+          <FooterComponent></FooterComponent>
+        </div>
       </div>
-      <div>
-        <InfoComponent></InfoComponent>
-      </div>
-      <div>
-        <ImgComponent></ImgComponent>
-      </div>
-      <div>
-        <PersonajesComponent></PersonajesComponent>
-      </div>
-      <div>
-        <FooterComponent></FooterComponent>
-      </div>
-
     </>
   )
 }

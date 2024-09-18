@@ -16,7 +16,7 @@ function Personajes() {
                 <div className="col-md-4 mb-5">
                     <div className="card h-100" style={{backgroundColor: '#2C4E80'}}>
                         <div className="card-body">
-                            <h2 className="card-title text-center color">Rryomen</h2>
+                            <h2 className="card-title text-center text-white color">Rryomen</h2>
                             <p className="card-text">
                                 <img src={img1} alt="" width="250px" className="container" />
                             </p>
@@ -30,7 +30,7 @@ function Personajes() {
                 <div className="col-md-4 mb-5">
                     <div className="card h-100" style={{backgroundColor: '#2C4E80'}}>
                         <div className="card-body">
-                            <h2 className="card-title text-center color">Mosuke</h2>
+                            <h2 className="card-title text-center text-white color">Mosuke</h2>
                             <p className="card-text">
                                 <img src={img2} alt="" width="250px" className="container" />
                             </p>
@@ -45,7 +45,7 @@ function Personajes() {
                 <div className="col-md-4 mb-5">
                     <div className="card h-100" style={{backgroundColor: '#2C4E80'}}>
                         <div className="card-body">
-                            <h2 className="card-title text-center color">Final boss</h2>
+                            <h2 className="card-title text-center text-white color">Final boss</h2>
                             <p className="card-text">
                                 <img src={img3} alt="" width="250px" className="container" />
                             </p>
