@@ -7,6 +7,8 @@ import CardComponent from "./Components/CardComponent"
 import NavbarComponent from "./Components/NavbarComponent"
 import InfoComponent from "./Components/InfoComponent"
 import ImgComponent from "./Components/ImgComponent"
+import FooterComponent from "./Components/FooterComponent"
+
 
 
 function App() {
@@ -24,6 +26,10 @@ function App() {
       <div>
         <ImgComponent></ImgComponent>
       </div>
+      <div>
+        <FooterComponent></FooterComponent>
+      </div>
+
     </>
   )
 }
