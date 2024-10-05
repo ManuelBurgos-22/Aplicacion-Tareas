@@ -6,9 +6,9 @@ function Navbar() {
         <>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-            <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#021526' }}>
+            <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#171717' }}>
                 <div className="container px-5">
-                    <a className="navbar-brand" href="#!">Ruptura</a>
+                    <a className="navbar-brand" href="#!">Nissan</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">

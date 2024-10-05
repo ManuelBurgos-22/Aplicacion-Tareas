@@ -4,7 +4,7 @@ function btn1() {
         <>
             <a className="btn btn-primary btn-sm" href="#!"
                 data-bs-toggle="modal" data-bs-target="#Boss"
-                style={{ backgroundColor: '#5D0E41', border: '#5D0E41' }}>Más información</a>
+                style={{ backgroundColor: '#171717', border: '#171717' }}>Más información</a>
         </>
     );
 }

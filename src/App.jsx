@@ -3,12 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CardComponent from "./Components/CardComponent"
+import CardComponent2 from "./Components/CardComponent2"
 import NavbarComponent from "./Components/NavbarComponent"
 import InfoComponent from "./Components/InfoComponent"
 import ImgComponent from "./Components/ImgComponent"
 import FooterComponent from "./Components/FooterComponent"
-import PersonajesComponent from "./Components/PersonajesComponent"
+import CardComponent from "./Components/CardComponent"
 
 
 function App() {
@@ -17,8 +17,9 @@ function App() {
   return (
 
     <>
-      <div style={{backgroundColor:'#03346e'}}>
+      <div style={{backgroundColor:'#EDEDED', margin:'0', padding:'0', boxSizing:'border-box'}}>
         <div>
+          <div>
           <NavbarComponent></NavbarComponent>
         </div>
         <div>
@@ -28,10 +29,11 @@ function App() {
           <ImgComponent></ImgComponent>
         </div>
         <div>
-          <PersonajesComponent></PersonajesComponent>
+          <CardComponent></CardComponent>
         </div>
         <div>
           <FooterComponent></FooterComponent>
+        </div>
         </div>
       </div>
     </>
