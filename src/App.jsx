@@ -11,6 +11,7 @@ import FooterComponent from "./Components/FooterComponent"
 import CardComponent from "./Components/CardComponent"
 
 
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -34,6 +35,7 @@ function App() {
         <div>
           <FooterComponent></FooterComponent>
         </div>
+        
         </div>
       </div>
     </>
