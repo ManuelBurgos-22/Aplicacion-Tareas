@@ -1,5 +1,7 @@
 import React from 'react';
-import './Contacto.css';
+import '../Contacto.css';
+import NavbarComponent from "./NavbarComponent";
+import FooterComponent from "./FooterComponent";
 
 function Contacto() {
   return (

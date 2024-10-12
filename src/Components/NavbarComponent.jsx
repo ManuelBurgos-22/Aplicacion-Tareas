@@ -14,7 +14,7 @@ function Navbar() {
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
                             <li className="nav-item"><a className="nav-link" href="#!" data-bs-toggle="modal" data-bs-target="#about">Acerca de</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#!" data-bs-toggle="modal" data-bs-target="#contactos">Contactos</a></li>
+                            <li className="nav-item"><a className="nav-link" href="" data-bs-toggle="modal" data-bs-target="#contactos">Contactos</a></li>
                             <li className="nav-item"><a className="nav-link" href="#!" data-bs-toggle="modal" data-bs-target="#creadores">Creadores</a></li>
                         </ul>
                     </div>
