@@ -1,0 +1,20 @@
+.nosotros-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.87);
+}
+
+.nosotros-title {
+    font-size: 2.5em;
+    color: #D72323;
+    margin-bottom: 20px;
+}
+
+.nosotros-info {
+    font-size: 1.2em;
+    color: black;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
