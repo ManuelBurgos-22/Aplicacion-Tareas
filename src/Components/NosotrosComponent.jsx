@@ -1,12 +1,9 @@
 import React from 'react';
-import '..NosotrosComponent.css';
-import NavbarComponent from "./NavbarComponent";
-import FooterComponent from "./FooterComponent";
+import '../NosotrosComponent.css';
 
 function NosotrosComponent() {
     return (
         <>
-            <NavbarComponent />
             <div className="nosotros-container">
                 <h1 className="nosotros-title">Sobre nosotros</h1>
                 
@@ -19,7 +16,6 @@ function NosotrosComponent() {
                     </p>
                 </div>
             </div>
-            <FooterComponent />
         </>
     );
 }
