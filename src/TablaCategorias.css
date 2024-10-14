@@ -1,0 +1,41 @@
+.tabla-categorias {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabla-categorias th, .tabla-categorias td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .tabla-categorias th {
+    background-color: #f2f2f2;
+  }
+  
+  .boton-modificar, .boton-eliminar {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .boton-modificar {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+  }
+  
+  .boton-eliminar {
+    background-color: #f44336; /* Rojo */
+    color: white;
+  }
+  
+  .boton-modificar:hover {
+    background-color: #45a049;
+  }
+  
+  .boton-eliminar:hover {
+    background-color: #d32f2f;
+  }
+  
