@@ -8,13 +8,16 @@ import img6 from "../../public/img/rryomen2.png"
 import img7 from "../../public/img/jefe.png"
 import img8 from "../../public/img/Creditos.png"
 
+
+
 function DarkVariantExample() {
   return (
-    <Carousel data-bs-theme="dark">
-      <Carousel.Item>
-        <img className="d-block w-100" src={img1}/>
-      </Carousel.Item>
-      {/* <Carousel.Item>
+    <div className="container-fluid" style={{ width: '100%', overflow: 'hidden' }}>
+      <Carousel data-bs-theme="dark">
+        <Carousel.Item>
+          <img className="d-block w-100" src={img1} />
+        </Carousel.Item>
+        {/* <Carousel.Item>
         <img
           className="d-block w-100"
           src={img2}
@@ -56,7 +59,8 @@ function DarkVariantExample() {
           src={img8}
         />
       </Carousel.Item> */}
-    </Carousel>
+      </Carousel>
+    </div>
   );
 }
 

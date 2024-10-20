@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TablaPedidos.css'; // Importa el archivo CSS para los estilos
+import '../TablaPedidos.css'; // Importa el archivo CSS para los estilos
 
 function TablaPedidos() {
   // Datos de ejemplo
@@ -22,7 +22,7 @@ function TablaPedidos() {
   };
 
   return (
-    <div>
+    <div style={{  width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column' }} className='contenedor'>
       <h2>Tabla de Pedidos</h2>
       <table className="tabla-pedidos">
         <thead>

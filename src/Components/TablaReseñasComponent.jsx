@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TablaReseñas.css'; // Importa el archivo CSS para los estilos
+import '../TablaReseñas.css'; // Importa el archivo CSS para los estilos
 
 function TablaReseñas() {
   // Datos de ejemplo
@@ -43,7 +43,7 @@ function TablaReseñas() {
   };
 
   return (
-    <div>
+    <div style={{  width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column' }} className='contenedor'>
       <h2>Tabla de Reseñas</h2>
       <table className="tabla-reseñas">
         <thead>

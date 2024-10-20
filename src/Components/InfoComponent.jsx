@@ -9,7 +9,7 @@ function Info() {
         <>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-            <div className="row gx-4 gx-lg-5 align-items-center my-5">
+            <div className="row gx-4 gx-lg-5 align-items-center my-5" style={{  width: '100%'}}>
                 <div className="col-lg-7"><img className='rounded float-start' src={img} alt="..." style={{ width:'500px'}}/>
                 </div>
                 <div className="col-lg-5">

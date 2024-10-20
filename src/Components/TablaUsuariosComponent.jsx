@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TablaUsuarios.css'; // Importa el archivo CSS
+import '../TablaUsuarios.css'; // Importa el archivo CSS
 
 function TablaUsuarios() {
   // Datos iniciales de ejemplo
@@ -22,7 +22,7 @@ function TablaUsuarios() {
   };
 
   return (
-    <div>
+    <div style={{  width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column' }} className='contenedor'>
       <h2>Tabla de Usuarios</h2>
       <table className="tabla-usuarios">
         <thead>

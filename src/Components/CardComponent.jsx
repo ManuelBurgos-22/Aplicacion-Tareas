@@ -6,7 +6,7 @@ import Btn2Component from "../Components/Btn2Component"
 function Card() {
     return (
         <>
-            <div className="row gx-4 gx-lg-5 justify-content-center">
+            <div className="row gx-4 gx-lg-5 justify-content-center" style={{  width: '100%'}}>
                 <div className="text-center py-4 text-dark">
                     <h3>
                         Aspectos principales

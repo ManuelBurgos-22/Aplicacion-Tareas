@@ -6,24 +6,30 @@ import InfoComponent from "./Components/InfoComponent";
 import ImgComponent from "./Components/ImgComponent";
 import FooterComponent from "./Components/FooterComponent";
 import CardComponent from "./Components/CardComponent";
-import ContactoComponent from "./Components/ContactoComponent"; // Importar el componente Contacto
-import NosotrosComponent from "./Components/NosotrosComponent"; // Importar el componente Nosotros
+import ContactoComponent from "./Components/ContactoComponent";
+import NosotrosComponent from "./Components/NosotrosComponent";
+import TablaCategoriaComponent from "./Components/TablaCategoriasComponent";
+import TablaPedidosComponent from "./Components/TablaPedidosComponent";
+import TablaProductosComponent from "./Components/TablaProductosComponent";
+import TablaReseñasComponent from "./Components/TablaReseñasComponent";
+import TablaUsuariosComponent from "./Components/TablaUsuariosComponent";
 
 function App() {
   return (
     <Router> {/* Envolver la aplicación en Router */}
-      <div style={{ backgroundColor: '#EDEDED', width:'200vh',}}>
+      <div style={{ width: '100%', overflow: 'hidden' }}>
         <NavbarComponent /> {/* Navbar se mantiene */}
         <Routes> {/* Definir rutas */}
           <Route path="/" element={
             <>
-              <InfoComponent /> {/* Ruta para el home */}
-              <ImgComponent /> {/* Mostrar ImgComponent solo en Home */}
-              <CardComponent /> {/* Mostrar CardComponent solo en Home */}
+              <InfoComponent />
+              <ImgComponent />
+              <CardComponent />
             </>
           } />
-          <Route path="/nosotros" element={<NosotrosComponent />} /> {/* Ruta para el componente Contacto */}
-          <Route path="/contactos" element={<ContactoComponent />} /> {/* Ruta para el componente Contacto */}
+          <Route path="/nosotros" element={<NosotrosComponent />} />
+          <Route path="/contactos" element={<ContactoComponent />} />
+          <Route path="/categorias" element={<TablaCategoriaComponent />} />
         </Routes>
         <FooterComponent /> {/* Footer se mantiene */}
       </div>
@@ -32,3 +38,9 @@ function App() {
 }
 
 export default App;
+
+{/* <TablaCategoriaComponent />
+<TablaPedidosComponent />
+<TablaProductosComponent />
+<TablaReseñasComponent />
+<TablaUsuariosComponent /> */}
