@@ -1,7 +1,20 @@
 import React, { useState } from 'react';
 import '../TablaCategorias.css'; // Importa el archivo CSS para los estilos
+import Modal1 from "./Modal1"; // Ruta corregida si es necesario
+
 
 function TablaCategorias() {
+  // Estado para controlar si el modal está abierto o cerrado
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  // Funciones para abrir y cerrar el modal
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   // Datos de ejemplo
   const [categorias, setCategorias] = useState([
     { id: 1, nombre: 'Categoría A' },
@@ -22,7 +35,7 @@ function TablaCategorias() {
   };
 
   return (
-    <div style={{  width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column' }} className='contenedor'>
+    <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} className='contenedor'>
       <h2>Tabla de Categorías</h2>
       <table className="tabla-categorias">
         <thead>
@@ -45,6 +58,9 @@ function TablaCategorias() {
           ))}
         </tbody>
       </table>
+      <br />
+      <button className='btn btn-success' onClick={openModal}>Abrir Modal</button>
+      <Modal1 isOpen={modalIsOpen} onRequestClose={closeModal} /> {/* Modal */}
     </div>
   );
 }

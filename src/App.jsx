@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importar react-router-dom
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from "react"; // Importa useState para el manejo de estado
 import NavbarComponent from "./Components/NavbarComponent";
 import InfoComponent from "./Components/InfoComponent";
 import ImgComponent from "./Components/ImgComponent";
@@ -30,6 +31,10 @@ function App() {
           <Route path="/nosotros" element={<NosotrosComponent />} />
           <Route path="/contactos" element={<ContactoComponent />} />
           <Route path="/categorias" element={<TablaCategoriaComponent />} />
+          <Route path="/pedidos" element={<TablaPedidosComponent />} />
+          <Route path="/productos" element={<TablaProductosComponent />} />
+          <Route path="/reseñas" element={<TablaReseñasComponent />} />
+          <Route path="/usuarios" element={<TablaUsuariosComponent />} />
         </Routes>
         <FooterComponent /> {/* Footer se mantiene */}
       </div>
@@ -38,6 +43,7 @@ function App() {
 }
 
 export default App;
+
 
 {/* <TablaCategoriaComponent />
 <TablaPedidosComponent />

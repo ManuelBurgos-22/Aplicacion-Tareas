@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import '../TablaReseñas.css'; // Importa el archivo CSS para los estilos
+import Modal4 from "./Modal4"; // Ruta corregida si es necesario
 
 function TablaReseñas() {
+  // Estado para controlar si el modal está abierto o cerrado
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  // Funciones para abrir y cerrar el modal
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   // Datos de ejemplo
   const [reseñas, setReseñas] = useState([
     {
@@ -43,7 +55,7 @@ function TablaReseñas() {
   };
 
   return (
-    <div style={{  width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column' }} className='contenedor'>
+    <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} className='contenedor'>
       <h2>Tabla de Reseñas</h2>
       <table className="tabla-reseñas">
         <thead>
@@ -84,6 +96,9 @@ function TablaReseñas() {
           ))}
         </tbody>
       </table>
+      <br />
+      <button className='btn btn-success' onClick={openModal}>Abrir Modal</button>
+      <Modal4 isOpen={modalIsOpen} onRequestClose={closeModal} /> {/* Modal */}
     </div>
   );
 }

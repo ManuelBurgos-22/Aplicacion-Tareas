@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import '../TablaUsuarios.css'; // Importa el archivo CSS
+import Modal5 from "./Modal5"; // Ruta corregida si es necesario
 
 function TablaUsuarios() {
+  // Estado para controlar si el modal está abierto o cerrado
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  // Funciones para abrir y cerrar el modal
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   // Datos iniciales de ejemplo
   const [usuarios, setUsuarios] = useState([
     { id: 1, nombre: 'Juan Perez', correo: 'juanperez@example.com', fecha: '2024-01-01' },
@@ -22,7 +34,7 @@ function TablaUsuarios() {
   };
 
   return (
-    <div style={{  width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column' }} className='contenedor'>
+    <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} className='contenedor'>
       <h2>Tabla de Usuarios</h2>
       <table className="tabla-usuarios">
         <thead>
@@ -49,6 +61,9 @@ function TablaUsuarios() {
           ))}
         </tbody>
       </table>
+      <br />
+      <button className='btn btn-success' onClick={openModal}>Abrir Modal</button>
+      <Modal5 isOpen={modalIsOpen} onRequestClose={closeModal} /> {/* Modal */}
     </div>
   );
 }

@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import '../TablaPedidos.css'; // Importa el archivo CSS para los estilos
+import Modal2 from "./Modal2"; // Ruta corregida si es necesario
 
 function TablaPedidos() {
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  // Funciones para abrir y cerrar el modal
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   // Datos de ejemplo
   const [pedidos, setPedidos] = useState([
     { id: 1, nombre: 'Cliente A', pedidos: 3, total: '$30' },
@@ -22,7 +34,7 @@ function TablaPedidos() {
   };
 
   return (
-    <div style={{  width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection:'column' }} className='contenedor'>
+    <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }} className='contenedor'>
       <h2>Tabla de Pedidos</h2>
       <table className="tabla-pedidos">
         <thead>
@@ -59,6 +71,9 @@ function TablaPedidos() {
           ))}
         </tbody>
       </table>
+      <br />
+      <button className='btn btn-success' onClick={openModal}>Abrir Modal</button>
+      <Modal2 isOpen={modalIsOpen} onRequestClose={closeModal} /> {/* Modal */}
     </div>
   );
 }
