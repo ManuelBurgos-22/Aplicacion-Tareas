@@ -1,28 +1,34 @@
-import React, { useState } from "react";
-import Modal from 'react-modal';
+import React from "react";
+import Modal from "react-modal";
 import "../Modal1.css";
 
 // Configuración para accesibilidad
 Modal.setAppElement("#root");
 
+const sendInfo = async () => {
+  const inputNombre = document.getElementById('inputNombre').value;
+  console.log(inputNombre);
+
+  try {
+    const response = await fetch('http://localhost:500/api/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ inputNombre }),
+    });
+    const data = await response.json();
+    console.log(data.message);
+  }
+  catch (error) {
+    console.error('Error:', error);
+  }
+};
+
 const Modal1 = ({ isOpen, onRequestClose }) => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: ""
-  });
-
-  // Maneja cambios en los inputs
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  // Envía el formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Datos del formulario:", formData);
-    onRequestClose();
+    sendInfo();
   };
 
   return (
@@ -37,27 +43,27 @@ const Modal1 = ({ isOpen, onRequestClose }) => {
           bottom: "auto",
           marginRight: "-50%",
           transform: "translate(-50%, -50%)",
-          width: "400px"
+          width: "400px",
         },
       }}
     >
-      <h2 className="modal-header">Editar Categoria</h2>
-      <form onSubmit={handleSubmit} className="modal-form">
-        <label>Nombre de la categoria:</label>
+      <h2 className="modal-header">Editar categoría</h2>
+      <form className="modal-form" onSubmit={handleSubmit}>
+        <label>Categoría:</label>
+        
         <input
           type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleInputChange}
-          placeholder="Nombre"
+          name="Nombre"
+          id="inputNombre"
+          placeholder="Nombre de la categoría"
           required
         />
 
         <div className="modal-buttons">
           <button type="button" onClick={onRequestClose} className="btn-close">
           </button>
-          <button type="submit" className=" btn btn-success">
-            Editar categoria
+          <button type="submit" className="btn btn-success">
+            Editar categoría
           </button>
         </div>
       </form>

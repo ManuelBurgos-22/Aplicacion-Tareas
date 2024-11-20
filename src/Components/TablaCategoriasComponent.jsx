@@ -59,7 +59,7 @@ function TablaCategorias() {
         </tbody>
       </table>
       <br />
-      <button className='btn btn-success' onClick={openModal}>Abrir Modal</button>
+      <button className='btn btn-success' onClick={openModal}>Agregar categoría</button>
       <Modal1 isOpen={modalIsOpen} onRequestClose={closeModal} /> {/* Modal */}
     </div>
   );

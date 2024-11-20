@@ -1,28 +1,42 @@
-import React, { useState } from "react";
-import Modal from 'react-modal';
+import React from "react";
+import Modal from "react-modal";
 import "../Modal1.css";
 
 // Configuración para accesibilidad
 Modal.setAppElement("#root");
 
-const Modal1 = ({ isOpen, onRequestClose }) => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: ""
-  });
+const sendInfo = async () => {
+  const NomProducto = document.getElementById('NomProducto').value;
+  const NomUsuario = document.getElementById('NomUsuario').value;
+  const Calificacion = document.getElementById('Calificacion').value;
+  const Comentario = document.getElementById('Comentario').value;
+  const Fecha = document.getElementById('Fecha').value;
+  console.log(NomProducto);
+  console.log(NomUsuario);
+  console.log(Calificacion);
+  console.log(Comentario);
+  console.log(Fecha);
 
-  // Maneja cambios en los inputs
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  try {
+    const response = await fetch('http://localhost:500/api/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ NomProducto, NomUsuario, Calificacion, Comentario, Fecha}),
+    });
+    const data = await response.json();
+    console.log(data.message);
+  }
+  catch (error) {
+    console.error('Error:', error);
+  }
+};
 
-  // Envía el formulario
+const Modal4 = ({ isOpen, onRequestClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Datos del formulario:", formData);
-    onRequestClose();
+    sendInfo();
   };
 
   return (
@@ -37,70 +51,54 @@ const Modal1 = ({ isOpen, onRequestClose }) => {
           bottom: "auto",
           marginRight: "-50%",
           transform: "translate(-50%, -50%)",
-          width: "400px"
+          width: "400px",
         },
       }}
     >
-      <h2 className="modal-header">Editar reseña</h2>
-      <form onSubmit={handleSubmit} className="modal-form">
-        <label>Nombre de la reseña:</label>
+      <h2 className="modal-header">Editar productos</h2>
+      <form className="modal-form" onSubmit={handleSubmit}>
+        <label>Productos:</label>
+
         <input
           type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleInputChange}
-          placeholder="Nombre"
+          id="NomProducto"
+          placeholder="Nombre del producto"
           required
         />
 
-        <label>Usuario:</label>
         <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          placeholder="Usuario"
+          type="text"
+          id="NomUsuario"
+          placeholder="Nombre del usuario"
           required
         />
 
-        <label>Clasificación:</label>
         <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          placeholder="Clasificación"
-          minLength="8"
+          type="number"
+          id="Calificacion"
+          placeholder="Calificación"
           required
         />
 
-        <label>Comentario:</label>
         <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
+          type="text"
+          id="Comentario"
           placeholder="Comentario"
-          minLength="8"
           required
         />
 
-        <label>Fecha:</label>
         <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
+          type="date"
+          id="Fecha"
           placeholder="Fecha"
-          minLength="8"
           required
         />
 
         <div className="modal-buttons">
           <button type="button" onClick={onRequestClose} className="btn-close">
           </button>
-          <button type="submit" className=" btn btn-success">
-            Editar reseña
+          <button type="submit" className="btn btn-success">
+            Editar producto
           </button>
         </div>
       </form>
@@ -108,4 +106,4 @@ const Modal1 = ({ isOpen, onRequestClose }) => {
   );
 };
 
-export default Modal1;
+export default Modal4;

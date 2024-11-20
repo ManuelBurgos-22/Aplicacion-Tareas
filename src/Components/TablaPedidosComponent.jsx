@@ -72,7 +72,7 @@ function TablaPedidos() {
         </tbody>
       </table>
       <br />
-      <button className='btn btn-success' onClick={openModal}>Abrir Modal</button>
+      <button className='btn btn-success' onClick={openModal}>Agregar pedido</button>
       <Modal2 isOpen={modalIsOpen} onRequestClose={closeModal} /> {/* Modal */}
     </div>
   );

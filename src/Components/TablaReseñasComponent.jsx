@@ -97,7 +97,7 @@ function TablaReseñas() {
         </tbody>
       </table>
       <br />
-      <button className='btn btn-success' onClick={openModal}>Abrir Modal</button>
+      <button className='btn btn-success' onClick={openModal}>Agregar reseña</button>
       <Modal4 isOpen={modalIsOpen} onRequestClose={closeModal} /> {/* Modal */}
     </div>
   );

@@ -1,28 +1,40 @@
-import React, { useState } from "react";
-import Modal from 'react-modal';
+import React from "react";
+import Modal from "react-modal";
 import "../Modal1.css";
 
 // Configuración para accesibilidad
 Modal.setAppElement("#root");
 
+const sendInfo = async () => {
+  const NomProducto = document.getElementById('NomProducto').value;
+  const Descripcion = document.getElementById('Descripcion').value;
+  const Precio = document.getElementById('Precio').value;
+  const Categoria = document.getElementById('Categoria').value;
+  console.log(NomProducto);
+  console.log(Descripcion);
+  console.log(Precio);
+  console.log(Categoria);
+
+  try {
+    const response = await fetch('http://localhost:500/api/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ NomProducto, Descripcion, Precio, Categoria }),
+    });
+    const data = await response.json();
+    console.log(data.message);
+  }
+  catch (error) {
+    console.error('Error:', error);
+  }
+};
+
 const Modal3 = ({ isOpen, onRequestClose }) => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: ""
-  });
-
-  // Maneja cambios en los inputs
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  // Envía el formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Datos del formulario:", formData);
-    onRequestClose();
+    sendInfo();
   };
 
   return (
@@ -37,51 +49,39 @@ const Modal3 = ({ isOpen, onRequestClose }) => {
           bottom: "auto",
           marginRight: "-50%",
           transform: "translate(-50%, -50%)",
-          width: "400px"
+          width: "400px",
         },
       }}
     >
-      <h2 className="modal-header">Editar producto</h2>
-      <form onSubmit={handleSubmit} className="modal-form">
-        <label>Nombre del producto:</label>
+      <h2 className="modal-header">Editar productos</h2>
+      <form className="modal-form" onSubmit={handleSubmit}>
+        <label>Productos:</label>
+
         <input
           type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleInputChange}
-          placeholder="Nombre"
+          id="NomProducto"
+          placeholder="Nombre del producto"
           required
         />
 
-        <label>Descripción:</label>
         <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
+          type="text"
+          id="Descripcion"
           placeholder="Descripción"
           required
         />
 
-        <label>Precio:</label>
         <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
+          type="number"
+          id="Precio"
           placeholder="Precio"
-          minLength="8"
           required
         />
 
-        <label>Categoria:</label>
         <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          placeholder="Categoria"
-          minLength="8"
+          type="text"
+          id="Categoria"
+          placeholder="Categoría"
           required
         />
 

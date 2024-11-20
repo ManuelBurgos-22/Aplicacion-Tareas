@@ -1,28 +1,38 @@
-import React, { useState } from "react";
-import Modal from 'react-modal';
+import React from "react";
+import Modal from "react-modal";
 import "../Modal1.css";
 
 // Configuración para accesibilidad
 Modal.setAppElement("#root");
 
-const Modal1 = ({ isOpen, onRequestClose }) => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: ""
-  });
+const sendInfo = async () => {
+  const NomUsuario = document.getElementById('NomUsuario').value;
+  const Correo = document.getElementById('Correo').value;
+  const Fecha = document.getElementById('Fecha').value;
+  console.log(NomUsuario);
+  console.log(Correo);
+  console.log(Fecha);
 
-  // Maneja cambios en los inputs
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  try {
+    const response = await fetch('http://localhost:500/api/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ NomUsuario, Correo, Fecha }),
+    });
+    const data = await response.json();
+    console.log(data.message);
+  }
+  catch (error) {
+    console.error('Error:', error);
+  }
+};
 
-  // Envía el formulario
+const Modal2 = ({ isOpen, onRequestClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Datos del formulario:", formData);
-    onRequestClose();
+    sendInfo();
   };
 
   return (
@@ -37,40 +47,32 @@ const Modal1 = ({ isOpen, onRequestClose }) => {
           bottom: "auto",
           marginRight: "-50%",
           transform: "translate(-50%, -50%)",
-          width: "400px"
+          width: "400px",
         },
       }}
     >
       <h2 className="modal-header">Editar usuario</h2>
-      <form onSubmit={handleSubmit} className="modal-form">
-        <label>Nombre del usuario:</label>
+      <form className="modal-form" onSubmit={handleSubmit}>
+        <label>Usuario:</label>
+
         <input
           type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleInputChange}
+          id="NomUsuario"
           placeholder="Nombre del usuario"
           required
         />
 
-        <label>E-mail:</label>
         <input
           type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          placeholder="correo@ejemplo.com"
+          id="Correo"
+          placeholder="Correo"
           required
         />
 
-        <label>Fecha:</label>
         <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
+          type="date"
+          id="Fecha"
           placeholder="Fecha"
-          minLength="8"
           required
         />
 
@@ -86,4 +88,4 @@ const Modal1 = ({ isOpen, onRequestClose }) => {
   );
 };
 
-export default Modal1;
+export default Modal2;
