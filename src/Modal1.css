@@ -68,3 +68,12 @@
     background-color: #0056b3;
   }
   
+  /* Modal1.css */
+.button-equal {
+  width: 100%;
+  padding: 10px; /* Ajusta según tus preferencias */
+}
+.modal-buttons .btn {
+  flex: 1;
+  margin: 0 5px; /* Espaciado entre los botones */
+}
